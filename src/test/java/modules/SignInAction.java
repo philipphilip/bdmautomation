@@ -15,14 +15,15 @@ public class SignInAction {
 
 	public static void Execute(WebDriver driver,HashMap<String,String> map) throws Exception{
 		
-		AutomationHomePage.sign_in.click();
-		Log.info("Click action is perfromed on My Account link" );
+		// AutomationHomePage.sign_in.click();
+		// Log.info("Click action is perfromed on My Account link" );
 
-		LoginPage.email.sendKeys(map.get("username"));
-
+		// LoginPage.email.sendKeys(map.get("admin"));
+		LoginPage.username.sendKeys("admin");
 		Log.info(" is entered in UserName text box" );
 		
-		LoginPage.password.sendKeys(map.get("password"));
+		// LoginPage.password.sendKeys(map.get("a"));
+		LoginPage.password.sendKeys("a");
 		Log.info(" is entered in Password text box" );
 
 		LoginPage.signin_button.click();

@@ -25,7 +25,7 @@ public class Hooks{
      */
     public void openBrowser() throws MalformedURLException {
     	System.out.println("Called openBrowser");
-        System.setProperty("webdriver.gecko.driver", "/home/eric/repositories/cucumber-jvm-template/drivers/geckodriver-v0.16.1-linux64/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "C:/Users/PPhilip/Projects/cucumber-java-selenium-gecko-template/drivers/geckodriver-v0.16.1-win64/geckodriver.exe");
     	driver = new FirefoxDriver();
     	driver.manage().deleteAllCookies();
     	driver.manage().window().maximize();
@@ -49,7 +49,7 @@ public class Hooks{
         }
         
         }
-        driver.quit();
+        //driver.quit();
         
     }
     
