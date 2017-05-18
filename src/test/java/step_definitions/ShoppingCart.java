@@ -36,10 +36,10 @@ public class ShoppingCart{
     	datamap.add(sampleData);
     }
     
-    @When("^I open automationpractice website$")
+    @When("^I open google website$")
     public void i_open_automationpractice_website() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-    	driver.get("http://automationpractice.com");
+    	driver.get("https://www.google.com.au/");
     }
 
     @When("^I sign in$")

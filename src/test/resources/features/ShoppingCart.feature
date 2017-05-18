@@ -1,6 +1,6 @@
 Feature: Shopping cart on an e-commerce website
 
   Scenario: Sign in and sign out
-    When I open automationpractice website
+    When I open google website
     And I sign in
     Then I sign out
