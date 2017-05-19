@@ -3,6 +3,7 @@ package modules;
 import helpers.Log;
 
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
@@ -27,9 +28,15 @@ public class SignInAction {
 		Log.info(" is entered in Password text box" );
 
 		LoginPage.signin_button.click();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+		LoginPage.marriageTab.click();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		
+		LoginPage.new_marriageNote.click();
 		Log.info("Click action is performed on Submit button");
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 		Reporter.log("SignIn Action is successfully perfomred");
-
 	}
 }

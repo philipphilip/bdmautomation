@@ -14,43 +14,44 @@ import cucumber.api.java.Before;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-public class Hooks{
-    public static WebDriver driver;
+public class Hooks {
+	public static WebDriver driver;
 
-    
-    @Before
-    /**
-     * Delete all cookies at the start of each scenario to avoid
-     * shared state between tests
-     */
-    public void openBrowser() throws MalformedURLException {
-    	System.out.println("Called openBrowser");
-        System.setProperty("webdriver.gecko.driver", "C:/Users/PPhilip/Projects/cucumber-java-selenium-gecko-template/drivers/geckodriver-v0.16.1-win64/geckodriver.exe");
-    	driver = new FirefoxDriver();
-    	driver.manage().deleteAllCookies();
-    	driver.manage().window().maximize();
-    }
+	@Before
+	/**
+	 * Delete all cookies at the start of each scenario to avoid shared state
+	 * between tests
+	 */
+	public void openBrowser() throws MalformedURLException {
+		System.out.println("Called openBrowser");
+		// System.setProperty("webdriver.gecko.driver",
+		// "C:/Users/PPhilip/Projects/cucumber-java-selenium-gecko-template/drivers/geckodriver-v0.16.1-win64/geckodriver.exe");
+		System.setProperty("webdriver.chrome.driver",
+				"C:/Users/PPhilip/Projects/cucumber-java-selenium-gecko-template/drivers/chrome-2.29-winx32/chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+	}
 
-     
-    @After
-    /**
-     * Embed a screenshot in test report if test is marked as failed
-     */
-    public void embedScreenshot(Scenario scenario) {
-       
-        if(scenario.isFailed()) {
-        try {
-        	 scenario.write("Current Page URL is " + driver.getCurrentUrl());
-//            byte[] screenshot = getScreenshotAs(OutputType.BYTES);
-            byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshot, "image/png");
-        } catch (WebDriverException somePlatformsDontSupportScreenshots) {
-            System.err.println(somePlatformsDontSupportScreenshots.getMessage());
-        }
-        
-        }
-        //driver.quit();
-        
-    }
-    
+	@After
+	/**
+	 * Embed a screenshot in test report if test is marked as failed
+	 */
+	public void embedScreenshot(Scenario scenario) {
+
+		if (scenario.isFailed()) {
+			try {
+				scenario.write("Current Page URL is " + driver.getCurrentUrl());
+				// byte[] screenshot = getScreenshotAs(OutputType.BYTES);
+				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+				scenario.embed(screenshot, "image/png");
+			} catch (WebDriverException somePlatformsDontSupportScreenshots) {
+				System.err.println(somePlatformsDontSupportScreenshots.getMessage());
+			}
+
+		}
+		// driver.quit();
+
+	}
+
 }

@@ -38,7 +38,6 @@ public class ShoppingCart {
 	public void i_open_automationpractice_website() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		driver.get("http://10.22.3.205/eregistry/birth/draft-nob");
-
 	}
 
 	@When("^I sign in$")
@@ -46,18 +45,15 @@ public class ShoppingCart {
 		// Write code here that turns the phrase above into concrete actions
 		PageFactory.initElements(driver, AutomationHomePage.class);
 		PageFactory.initElements(driver, LoginPage.class);
-		System.out.println("clicking the button");
 		SignInAction.Execute(driver, datamap.get(0));
-
-
+		System.out.println("after loging in");
 	}
 
 	@Then("^I sign out$")
 	public void i_sign_out() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
-		// SignoutAction.Execute(driver);
-		System.out.println("You will have to log out manualy");
-		
+		System.out.println("Just before the sign out");
+		SignoutAction.Execute(driver);
+		System.out.println("Just after the sign out");
 	}
-
 }
