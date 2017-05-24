@@ -1,4 +1,4 @@
-Feature: Shopping cart on an e-commerce website
+Feature: BDM forms testing
 
   Scenario: Sign in and sign out
     When I open eRegistry website
