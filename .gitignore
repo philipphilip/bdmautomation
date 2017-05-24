@@ -3,4 +3,7 @@
 .settings/
 .classpath
 .project
+drivers/chrome-2.29-winx32/
+src/test/java/modules/GoToNOBForm.java
+src/test/java/pageobjects/NOBPage.java
 /test-output/
