@@ -13,7 +13,6 @@ public class FillNOBForm {
 
 	public static void Execute(WebDriver driver) throws Exception {
 
-		System.out.println("this is where we will fill the form");
 		PageFactory.initElements(driver, NOBPage.class);
 		PageFactory.initElements(driver, BRSPage.class);
 		PageFactory.initElements(driver, CoreControls.class);
