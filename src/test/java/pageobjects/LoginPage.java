@@ -19,8 +19,11 @@ public class LoginPage extends BaseClass {
 	@FindBy(xpath = "//*[@id='Password']")
 	public static WebElement password;
 
-	@FindBy(xpath = "//form/div[3]/button")
+	@FindBy(xpath = ".//*[contains(text(),'Login')]")
 	public static WebElement signin_button;
+	
+	@FindBy(xpath = ".//*/a[contains(text(),'About')]")
+	public static WebElement the_about_tab;
 
 	@FindBy(how = How.ID, using = "email_create")
 	public static WebElement email_create;
