@@ -23,11 +23,21 @@ public class Hooks {
 	 * between tests
 	 */
 	public void openBrowser() throws MalformedURLException {
-		System.out.println("Called openBrowser");
-		// System.setProperty("webdriver.gecko.driver",
-		// "C:/Users/PPhilip/Projects/cucumber-java-selenium-gecko-template/drivers/geckodriver-v0.16.1-win64/geckodriver.exe");
+		
+		// -----Run on a node------//
+		// DesiredCapabilities caps = DesiredCapabilities.chrome();
+		// caps.setBrowserName("chrome");
+		// caps.setPlatform(Platform.ANY);
+		// driver = new RemoteWebDriver(new URL(nodrul), caps);
+
+		// -----Run locally on FireFox Browser------//
+		// System.setProperty("webdriver.gecko.driver","drivers/geckodriver-v0.16.1-win64/geckodriver.exe");
+		// driver = new FirefoxDriver();
+
+		// -----Run locally on Chrome Browser------//
 		System.setProperty("webdriver.chrome.driver",
-				"C:/Users/PPhilip/Projects/cucumber-java-selenium-gecko-template/drivers/chrome-2.29-winx32/chromedriver.exe");
+				"C:/Users/PPhilip/Projects/core-automation-testing/drivers/chrome-2.29-winx32/chromedriver.exe");
+		
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
